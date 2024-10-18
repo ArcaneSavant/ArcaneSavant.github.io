@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArcaneSavant</title><link>https://arcanesavant.github.io/</link><description>Recent content on ArcaneSavant</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://arcanesavant.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo versus Jekyll</title><link>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</link><pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/hugo-versus-jekyll.png" alt="Featured image of post Hugo versus Jekyll" />&lt;!-- cSpell:words ArcaneSavant -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web Development on ArcaneSavant</title><link>https://arcanesavant.github.io/categories/web-development/</link><description>Recent content in Web Development on ArcaneSavant</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://arcanesavant.github.io/categories/web-development/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo versus Jekyll</title><link>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</link><pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/hugo-versus-jekyll.png" alt="Featured image of post Hugo versus Jekyll" />&lt;!-- cSpell:words ArcaneSavant -->
 &lt;h2 id="introduction">Introduction
 &lt;/h2>&lt;p>Websites built with Static Site Generator (SSG) are faster, more secure, and dev-friendly.
 They are also easier for SEO.
@@ -81,16 +81,4 @@ The choice is largely dependent on the specific needs and project requirements.
 As you may have noticed, I chose to build this website with Hugo.
 What are your thoughts on Hugo versus Jekyll?
 Which one would you prefer, and why?
-Share your opinions in the comments section below.&lt;/p></description></item><item><title>About</title><link>https://arcanesavant.github.io/about/</link><pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/about/</guid><description>&lt;!-- cspell:words FOSS -->
-&lt;p>Hello! I go by the name ArcaneSavant.&lt;/p>
-&lt;p>My goal is to learn as much as I can about technology, with an emphasis on Free and Open Source Software (FOSS).&lt;/p>
-&lt;p>I spent my childhood living in rural Bangladesh and have now moved to urban areas.
-I completed my undergraduate studies with a degree in Forestry from a top university in Bangladesh.
-At present, I am studying for a Master&amp;rsquo;s in Environmental Science.
-These experiences fuel my interest in the relationship between technology and the environment.&lt;/p>
-&lt;p>On top of my interests in technology, I enjoy going on long walks with family and friends to take in the scenery as well as share important stories about life.
-After all, technology ought to go hand in hand with nature.&lt;/p>
-&lt;p>You might ask, Why did I write this blog in the first place?
-The truth is, I wanted to join the remarkable works of others I found on the internet.
-I want to be a part of that community and help out people who share the same passion but find the tech world rather intimidating.&lt;/p>
-&lt;p>Come along while we delve into the realm of technology, and do not hesitate to express your opinions along the way!&lt;/p></description></item><item><title>Archives</title><link>https://arcanesavant.github.io/archives/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/archives/</guid><description/></item><item><title>Search</title><link>https://arcanesavant.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/search/</guid><description/></item></channel></rss>
+Share your opinions in the comments section below.&lt;/p></description></item></channel></rss>
