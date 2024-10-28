@@ -1,8 +1,6 @@
 # cSpell:disable
 
 baseURL: https://arcanesavant.github.io/
-title: ArcaneSavant
-languageCode: en-us
 theme: hugo-theme-stack
 
 # Theme i18n support
@@ -12,6 +10,16 @@ DefaultContentLanguage: en
 # Set hasCJKLanguage to true if DefaultContentLanguage is in [zh-cn ja ko]
 # This will make .Summary and .WordCount behave correctly for CJK languages.
 hasCJKLanguage: false
+
+languages:
+  en:
+    languageDirection: ltr
+    languageName: English
+    title: ArcaneSavant's Blog
+    weight: 1
+    params:
+      sidebar:
+        subtitle: Technology Enthusiast
 
 pagination:
   pagerSize: 5
@@ -37,7 +45,6 @@ params:
 
   sidebar:
     emoji: 💻
-    subtitle: Technology Enthusiast
     avatar:
       enabled: true
       local: true
