@@ -1,4 +1,287 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArcaneSavant's Blog</title><link>https://arcanesavant.github.io/</link><description>Recent content on ArcaneSavant's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://arcanesavant.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo versus Jekyll</title><link>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</link><pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/hugo-versus-jekyll.png" alt="Featured image of post Hugo versus Jekyll" />&lt;!-- cSpell:words ArcaneSavant -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ArcaneSavant's Blog</title><link>https://arcanesavant.github.io/</link><description>Recent content on ArcaneSavant's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://arcanesavant.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>12 Things to Do After Installing Fedora Workstation 41</title><link>https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/</link><pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/fedora.jpg" alt="Featured image of post 12 Things to Do After Installing Fedora Workstation 41" />&lt;!-- cspell:words ArcaneSavant allowerasing appmenu devel flathub flatpak freeworld groupupdate gsettings gstreamer libav libdvdcss libva noarch nvdec nvenc openh264 ptyxis rpmfusion setopt touchpad upstreams vaapi vdpau -->
+&lt;!-- markdownlint-disable MD033 -->
+&lt;h2 id="introduction">Introduction
+&lt;/h2>&lt;p>Fedora Workstation comes with vanilla GNOME as its desktop environment, which is, in my opinion, a bit too bare-bones for everyday tasks.
+A few actions can be taken to improve this experience.
+This article will examine what to do following the installation of Fedora Workstation 41.
+Keep in mind that this is by no means an exhaustive list.&lt;/p>
+&lt;h2 id="to-do">To-Do
+&lt;/h2>&lt;h3 id="assign-keyboard-shortcut-to-launch-terminal">Assign Keyboard Shortcut to Launch Terminal
+&lt;/h3>&lt;p>Out of the box, there is no keyboard shortcut available to open a terminal.
+To assign a keyboard shortcut to open the terminal of your choice,&lt;/p>
+&lt;p>Go to &lt;strong>Settings&lt;/strong> &amp;gt; &lt;strong>Keyboard&lt;/strong> &amp;gt; Click on &lt;strong>View and Customize Shortcuts&lt;/strong> from the &amp;ldquo;Keyboard Shortcuts&amp;rdquo; Section &amp;gt; Scroll down to &lt;strong>Custom Shortcuts&lt;/strong> &amp;gt; Click &lt;strong>Add Shortcut&lt;/strong>.&lt;/p>
+&lt;p>A pop-up window requesting a Name, Command, and Shortcut will appear.&lt;/p>
+&lt;ul>
+&lt;li>In the Name field, enter &lt;strong>Ptyxis&lt;/strong> as the name.&lt;/li>
+&lt;li>In the Command field, enter &lt;code>ptyxis&lt;/code>.&lt;/li>
+&lt;li>In the Shortcut field, press the key combination that you want to use to launch GNOME Terminal.
+For example, &lt;kbd>Ctrl&lt;/kbd> + &lt;kbd>Alt&lt;/kbd> + &lt;kbd>T&lt;/kbd>.&lt;/li>
+&lt;li>Click the &lt;strong>Add&lt;/strong> button.&lt;/li>
+&lt;/ul>
+&lt;h3 id="change-hostname">Change Hostname
+&lt;/h3>&lt;p>The default hostname is &amp;ldquo;fedora&amp;rdquo;.
+Change it to your liking to make it easily discoverable in your local network.&lt;/p>
+&lt;p>To change the hostname, open a terminal and issue the following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo hostnamectl set-hostname &lt;span class="s2">&amp;#34;Penguin&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>In the example above, &amp;ldquo;Penguin&amp;rdquo; is the desired hostname.&lt;/p>
+&lt;h3 id="change-swappiness">Change Swappiness
+&lt;/h3>&lt;p>The swappiness sysctl parameter represents the kernel&amp;rsquo;s preference for swap space.
+A lower swappiness value means that the kernel will be less likely to swap memory to disk.
+This can improve performance, but it can also lead to memory pressure if you do not have enough RAM.&lt;/p>
+&lt;p>The optimal swappiness value will vary depending on your system and your workload.
+You may need to experiment to find the value that works best for you.&lt;/p>
+&lt;p>You can check the current swappiness value by running the following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sysctl vm.swappiness
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>To set the swappiness value permanently, create a sysctl.d configuration file.
+For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo mkdir -p /etc/sysctl.d
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo touch /etc/sysctl.d/local.conf
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">printf&lt;/span> &lt;span class="s1">&amp;#39;%s\n&amp;#39;&lt;/span> &lt;span class="s1">&amp;#39;vm.swappiness=10&amp;#39;&lt;/span> &lt;span class="p">|&lt;/span> sudo tee /etc/sysctl.d/local.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Run the following command to apply the changes:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo sysctl -p /etc/sysctl.d/local.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="enable-minimize-or-maximize-button">Enable Minimize or Maximize Button
+&lt;/h3>&lt;p>If you are not comfortable without the Minimize and Maximize window buttons, there is a way to bring them back.&lt;/p>
+&lt;p>Open a terminal and issue the following command to enable the minimize and maximize buttons:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">gsettings &lt;span class="nb">set&lt;/span> org.gnome.desktop.wm.preferences button-layout &lt;span class="s2">&amp;#34;appmenu:minimize,maximize,close&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>The minimize and maximize buttons will now be enabled in all application windows.&lt;/p>
+&lt;h3 id="change-appearance">Change Appearance
+&lt;/h3>&lt;p>Fedora 41 Workstation offers both Light and Dark modes.
+Choose one from &lt;strong>Settings &amp;gt; Appearance&lt;/strong> according to your liking.&lt;/p>
+&lt;p>You might as well change the desktop background if you want a more appealing look.&lt;/p>
+&lt;h3 id="tweak-privacy--security-options">Tweak Privacy &amp;amp; Security Options
+&lt;/h3>&lt;h4 id="file-history--trash">File History &amp;amp; Trash
+&lt;/h4>&lt;p>&amp;ldquo;File History&amp;rdquo; feature makes it easier for you to find files that you might want to use.
+If you do not like the feature, go to &lt;strong>Settings&lt;/strong> &amp;gt; &lt;strong>Privacy &amp;amp; Security&lt;/strong> &amp;gt; &lt;strong>File History &amp;amp; Trash&lt;/strong> and turn it off from the &amp;ldquo;File History&amp;rdquo; section.&lt;/p>
+&lt;p>Trash and temporary files can sometimes include personal or sensitive information.
+Automatically deleting them can help to protect your privacy.
+I highly recommend you enable this feature.&lt;/p>
+&lt;p>Go to &lt;strong>Settings&lt;/strong> &amp;gt; &lt;strong>Privacy &amp;amp; Security&lt;/strong> &amp;gt; &lt;strong>File History &amp;amp; Trash&lt;/strong> &amp;gt; Enable &lt;strong>Automatically Delete Trash Content&lt;/strong> and &lt;strong>Automatically Delete Temporary Files&lt;/strong> from the &amp;ldquo;Trash &amp;amp; Temporary Files&amp;rdquo; section.&lt;/p>
+&lt;h3 id="mouse--touchpad">Mouse &amp;amp; Touchpad
+&lt;/h3>&lt;p>Since Fedora has a reputation for staying as close to upstream as possible, they follow the various defaults selected by the desktop environment upstreams.
+Generally, this entails a disabled touchpad click by default.&lt;/p>
+&lt;p>To enable tap to click, Go to &lt;strong>Settings&lt;/strong> &amp;gt; &lt;strong>Mouse &amp;amp; Touchpad&lt;/strong> &amp;gt; Enable &lt;strong>Tap to Click&lt;/strong> from the &amp;ldquo;Touchpad&amp;rdquo; section.&lt;/p>
+&lt;h3 id="configure-dnf">Configure DNF
+&lt;/h3>&lt;p>DNF configuration file is located at &lt;code>/etc/dnf/dnf.conf&lt;/code>.
+Behavior of DNF can be configured by editing this file.&lt;/p>
+&lt;p>The number of parallel downloads can be modified to get faster downloads if your internet connection is suitably fast.&lt;/p>
+&lt;p>Firstly, open the DNF configuration file with &lt;code>nano&lt;/code>:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo nano /etc/dnf/dnf.conf
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>Then append the following line and save:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="nv">max_parallel_downloads&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="m">6&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="enable-3rd-party-repositories">Enable 3rd Party Repositories
+&lt;/h3>&lt;h4 id="enable-rpm-fusion">Enable RPM Fusion
+&lt;/h4>&lt;p>RPM Fusion is a third-party repository that provides access to a wider range of software than what is available in the Fedora repositories.&lt;/p>
+&lt;p>To enable RPM Fusion, open a terminal and type the following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-&lt;span class="k">$(&lt;/span>rpm -E %fedora&lt;span class="k">)&lt;/span>.noarch.rpm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-&lt;span class="k">$(&lt;/span>rpm -E %fedora&lt;span class="k">)&lt;/span>.noarch.rpm
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>After that, install the &lt;code>appstream-data&lt;/code> package so that Gnome Software or KDE Discover may be used to install GUI programs from RPM Fusion.&lt;/p>
+&lt;p>The following command will install the required packages:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf update @core
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="enable-flathub">Enable Flathub
+&lt;/h4>&lt;p>Flatpak is installed by default on Fedora Workstation.
+To begin, simply enable Flathub, which is the best way to obtain Flatpak apps.&lt;/p>
+&lt;p>Run the following command to enable it:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>That is it! You now have access to unfiltered Flathub on Fedora.&lt;/p>
+&lt;h3 id="update-system">Update System
+&lt;/h3>&lt;p>You should run a system update as soon as possible after installing Fedora.
+This will install the latest security patches and bug fixes, and it will also ensure that you have the latest version of all of your software.&lt;/p>
+&lt;p>To do this, open a terminal and run the following command:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf upgrade
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="install-media-codecs">Install Media Codecs
+&lt;/h3>&lt;p>Fedora is a great Linux distribution, but it does not come with all the media codecs you might need out of the box.
+If you try to play a video or audio file that uses a codec that is not installed, you will get an error message.&lt;/p>
+&lt;p>To fix this, you need to install the necessary codecs.
+There are a few different ways to do this, but the easiest way is to use the RPM Fusion repository.&lt;/p>
+&lt;p>Use a terminal to install packages that provide multimedia libraries from the RPM Fusion repository.&lt;/p>
+&lt;h4 id="switch-to-full-ffmpeg">Switch to full FFmpeg
+&lt;/h4>&lt;p>The FFmpeg library that is shipped with Fedora 41 does not support H.264 decoding. Switch to the RPM Fusion&amp;rsquo;s better supported FFmpeg build and follow the next section for additional codecs or plugins.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="install-additional-codec">Install Additional Codec
+&lt;/h4>&lt;p>Install the additional multimedia packages required to enable the gstreamer framework-based application and other multimedia tools to playback other restricted codecs.&lt;/p>
+&lt;p>To do this, open a terminal and run the following commands:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf update @multimedia --setopt&lt;span class="o">=&lt;/span>&lt;span class="s2">&amp;#34;install_weak_deps=False&amp;#34;&lt;/span> --exclude&lt;span class="o">=&lt;/span>PackageKit-gstreamer-plugin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="enable-dvd-playback">Enable DVD Playback
+&lt;/h4>&lt;p>Install the &lt;code>libdvdcss&lt;/code> package from the RPM Fusion repository to enable DVD playback.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf install rpmfusion-free-release-tainted
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo dnf install libdvdcss
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="enable-va-api">Enable VA-API
+&lt;/h3>&lt;p>VA-API stands for Video Acceleration API.
+It is an open-source API that allows applications to use hardware video acceleration capabilities, usually provided by the GPU.&lt;/p>
+&lt;p>VA-API is supported by a wide range of hardware vendors, including Intel, NVIDIA, and AMD.
+To enable VA-API on your system, you will need to install the appropriate drivers and libraries.&lt;/p>
+&lt;p>Please be aware that for VA-API to function as intended, the full FFmpeg build is required. Before continuing, make sure &lt;code>ffmpeg&lt;/code> from the RPM Fusion repository is installed.&lt;/p>
+&lt;h4 id="intel">Intel
+&lt;/h4>&lt;p>VA-API support for newer GPUs are provided by &lt;code>intel-media-driver&lt;/code>.
+Visit &lt;a class="link" href="https://github.com/intel/media-driver#supported-platforms" target="_blank" rel="noopener"
+>upstream&lt;/a> to see which platforms are supported by this driver.&lt;/p>
+&lt;p>Run the following command to install it:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf install intel-media-driver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>VA-API support for older GPUs are provided by &lt;code>libva-intel-driver&lt;/code>.
+Run the following command to install it:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf install libva-intel-driver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="amd">AMD
+&lt;/h4>&lt;p>For AMD, run the following commands to enable VA-API:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>If using i686 compatibility libraries (e.g. Steam):&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h4 id="nvidia">Nvidia
+&lt;/h4>&lt;p>The Nvidia proprietary driver does not support VA-API, but there is a wrapper that can bridge NVDEC/NVENC with VA-API&lt;/p>
+&lt;p>Run the following command to install it:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf install libva-nvidia-driver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>You can also install both 32bit and 64bit flavor in one command as needed.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">sudo dnf install libva-nvidia-driver.&lt;span class="o">{&lt;/span>i686,x86_64&lt;span class="o">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="conclusion">Conclusion
+&lt;/h2>&lt;p>I hope this gives you a good starting point for getting started with Fedora 41.
+If you have any questions, please feel free to ask in the comments below.&lt;/p></description></item><item><title>Hugo versus Jekyll</title><link>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</link><pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/hugo-versus-jekyll.png" alt="Featured image of post Hugo versus Jekyll" />&lt;!-- cSpell:words ArcaneSavant -->
 &lt;h2 id="introduction">Introduction
 &lt;/h2>&lt;p>Websites built with Static Site Generator (SSG) are faster, more secure, and dev-friendly.
 They are also easier for SEO.

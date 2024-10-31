@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on ArcaneSavant's Blog</title><link>https://arcanesavant.github.io/post/</link><description>Recent content in Posts on ArcaneSavant's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://arcanesavant.github.io/post/index.xml" rel="self" type="application/rss+xml"/><item><title>12 Things to Do After Installing Fedora Workstation 41</title><link>https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/</link><pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/fedora.jpg" alt="Featured image of post 12 Things to Do After Installing Fedora Workstation 41" />&lt;!-- cspell:words ArcaneSavant allowerasing appmenu devel flathub flatpak freeworld groupupdate gsettings gstreamer libav libdvdcss libva noarch nvdec nvenc openh264 ptyxis rpmfusion setopt touchpad upstreams vaapi vdpau -->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gnome on ArcaneSavant's Blog</title><link>https://arcanesavant.github.io/tags/gnome/</link><description>Recent content in Gnome on ArcaneSavant's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 31 Oct 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://arcanesavant.github.io/tags/gnome/index.xml" rel="self" type="application/rss+xml"/><item><title>12 Things to Do After Installing Fedora Workstation 41</title><link>https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/</link><pubDate>Thu, 31 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/31/12-things-to-do-after-installing-fedora-workstation-41/fedora.jpg" alt="Featured image of post 12 Things to Do After Installing Fedora Workstation 41" />&lt;!-- cspell:words ArcaneSavant allowerasing appmenu devel flathub flatpak freeworld groupupdate gsettings gstreamer libav libdvdcss libva noarch nvdec nvenc openh264 ptyxis rpmfusion setopt touchpad upstreams vaapi vdpau -->
 &lt;!-- markdownlint-disable MD033 -->
 &lt;h2 id="introduction">Introduction
 &lt;/h2>&lt;p>Fedora Workstation comes with vanilla GNOME as its desktop environment, which is, in my opinion, a bit too bare-bones for everyday tasks.
@@ -281,87 +281,4 @@ Run the following command to install it:&lt;/p>
 &lt;/div>
 &lt;/div>&lt;h2 id="conclusion">Conclusion
 &lt;/h2>&lt;p>I hope this gives you a good starting point for getting started with Fedora 41.
-If you have any questions, please feel free to ask in the comments below.&lt;/p></description></item><item><title>Hugo versus Jekyll</title><link>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</link><pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate><guid>https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/</guid><description>&lt;img src="https://arcanesavant.github.io/p/2024/10/18/hugo-versus-jekyll/hugo-versus-jekyll.png" alt="Featured image of post Hugo versus Jekyll" />&lt;!-- cSpell:words ArcaneSavant -->
-&lt;h2 id="introduction">Introduction
-&lt;/h2>&lt;p>Websites built with Static Site Generator (SSG) are faster, more secure, and dev-friendly.
-They are also easier for SEO.
-It can be difficult to choose a suitable SSG because there are many.
-However, Hugo and Jekyll are the most popular choices among developers.&lt;/p>
-&lt;p>Let&amp;rsquo;s compare Hugo with Jekyll, shall we?&lt;/p>
-&lt;h2 id="comparison">Comparison
-&lt;/h2>&lt;h3 id="ease-of-install">Ease of Install
-&lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>If you are a MacOS or Linux user, you can install Hugo with a single command.
-For instructions about how to install Hugo on other operating systems, follow the official &lt;a class="link" href="https://gohugo.io/getting-started/installing" target="_blank" rel="noopener"
->installation guide&lt;/a>.&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>Command for MacOS:
-&lt;code>brew install hugo&lt;/code>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Command for Linux (Ubuntu):
-&lt;code>sudo apt install hugo&lt;/code>&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Installing Jekyll is not as straight forward as installing Hugo.
-However, there is an excellent &lt;a class="link" href="https://jekyllrb.com/docs/installation/" target="_blank" rel="noopener"
->installation guide&lt;/a> to get started with Jekyll.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="external-dependencies">External Dependencies
-&lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>Unlike many other static site generators, Hugo does not require any external dependencies to run.
-All you need is the Hugo binary.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Jekyll, on the other hand depends on Ruby.
-So, Ruby needs to be configured first in order to install Jekyll.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="speed">Speed
-&lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>Hugo is currently the fastest static site generator in the market.
-It can generate thousands of webpages in just a few seconds.
-That saves a lot of time when your site starts growing in size.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Jekyll is at least 3 times slower than Hugo.
-That means Jekyll needs significantly more time than Hugo to build the same site.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="flexibility">Flexibility
-&lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>Hugo is very flexible in terms of content structure.
-It can be used to build various types of websites.
-For example, Blog, Documentation, Portfolio, and many others.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>On the other hand, Jekyll is primarily recognized for its built-in features that facilitate the creation of comprehensive blogs.
-Additional functionalities can be integrated through various third-party plugins.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="theme-availability">Theme Availability
-&lt;/h3>&lt;ul>
-&lt;li>
-&lt;p>Hugo offers a wide range of themes that are straightforward to customize.
-This aspect of Hugo themes allows developers to modify layouts, styles, and functionalities without extensive coding.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Jekyll also has a rich selection of themes, particularly for blogs.
-However, the customization of themes can sometimes be more complex due to the reliance on Ruby and plugins.&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;h2 id="conclusion">Conclusion
-&lt;/h2>&lt;p>Both Hugo and Jekyll present comparable features, making the decision between the two a challenging one.
-The choice is largely dependent on the specific needs and project requirements.
-As you may have noticed, I chose to build this website with Hugo.
-What are your thoughts on Hugo versus Jekyll?
-Which one would you prefer, and why?
-Share your opinions in the comments section below.&lt;/p></description></item></channel></rss>
+If you have any questions, please feel free to ask in the comments below.&lt;/p></description></item></channel></rss>
